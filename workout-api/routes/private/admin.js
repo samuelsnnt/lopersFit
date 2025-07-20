@@ -18,7 +18,7 @@ router.post('/addUserAdmin', async (req, res) => {
         res.status(401).json({msg: 'User not found'});
     };
 
-    usuario.admin = 1;
+    usuario.admin = true;
     try{
         await usuario.save();
         return res.status(200).json({msg: `User ${usuario.username} has been added as an administrator!`})
@@ -38,7 +38,7 @@ router.post('/removeUserAdmin', async (req, res) => {
         res.status(401).json({msg: 'User not found'});
     };
 
-    usuario.admin = 0;
+    usuario.admin = false;
     await usuario.save();
     return res.status(200).json({msg: `User ${usuario.username} has removed as an administrator!`})
 });
