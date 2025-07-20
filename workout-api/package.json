@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Samuel Santana",
-  "license": "ISC",
+  "license": "MIT",
   "description": "Rede social que busca uma melhor forma de viver.",
   "dependencies": {
     "body-parser": "^2.2.0",
