@@ -1,7 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/workouts/page": "app/workouts/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/profile/edit/page": "app/profile/edit/page.js",
-  "/legal/privacy/page": "app/legal/privacy/page.js"
-}
+{}
