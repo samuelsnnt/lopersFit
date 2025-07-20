@@ -27,7 +27,7 @@ import cors from 'cors';
 //===================================================================================================================
 
 // ↓ Cors ↓ 
-    app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
+    app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }))
 
 // ↓ CookieParser(Para pegar o token do usuário que está no cookie.) ↓ 
     app.use(cookieParser()); 
@@ -64,10 +64,10 @@ import cors from 'cors';
 
 // ↓ Mongoose ↓
     mongoose.Promise = global.Promise; // Permite usar a sintaxe padrão do JavaScript para resultados assíncronos do Mongoose.
-    mongoose.connect('mongodb://localhost/socialfit').then(() => {
-        console.log('Banco de dados conectado ao servidor com sucesso!');
+    mongoose.connect(process.env.MONGO_URL).then(() => {
+        console.log('Database connecting successfully!');
     }).catch((e) => {
-        console.log('Erro ao conectar ao banco de dados: '+e);
+        console.log('Error connecting to database: '+e);
     });
 
 //===================================================================================================================||
