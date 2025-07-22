@@ -122,8 +122,8 @@ router.post('/login', async (req, res) => {
                 workouts: userLogged.workouts || []
                 }
             }, token });
-    } catch (e) {
-        return res.status(500).json({ success: false, msg: `There was a server error: ${e}` });
+    } catch {
+        return res.status(500).json({ success: false, msg: "There was a server error" });
     }
 });
 
