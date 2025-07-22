@@ -45,13 +45,13 @@ router.post('/register', Upload.single('uploads-users'), async(req, res) => {
         password: passwordHash,
      });
 
-     try{
+     try {
         const image = await profileImageCreateOnRegister(createUser._id, req.file)
         createUser.profileImageId = image._id;
         await createUser.save();
         res.status(201).json({success: true, msg:"User successfully created!"});
-     } catch(e){
-        res.status(500).json({success: false, msg: `There was a server error: ${e}`})
+     } catch {
+        res.status(500).json({success: false, msg: "There was a server error."})
      }
 });
 
